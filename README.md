@@ -12,36 +12,36 @@ classDiagram
     class iPhone {
         +tocar()
         +pausar()
-        +selecionarMusica(String musica)
-        +ligar(String numero)
+        +selecionarMusica(musica: String)
+        +ligar(numero: String)
         +atender()
         +iniciarCorreioVoz()
-        +exibirPagina(String url)
+        +exibirPagina(url: String)
         +adicionarNovaAba()
         +atualizarPagina()
     }
 
-    interface ReprodutorMusical {
+    ReprodutorMusical <|.. iPhone
+    AparelhoTelefonico <|.. iPhone
+    NavegadorInternet <|.. iPhone
+
+    class ReprodutorMusical {
         <<interface>>
         +tocar()
         +pausar()
-        +selecionarMusica(String musica)
+        +selecionarMusica(musica: String)
     }
 
-    interface AparelhoTelefonico {
+    class AparelhoTelefonico {
         <<interface>>
-        +ligar(String numero)
+        +ligar(numero: String)
         +atender()
         +iniciarCorreioVoz()
     }
 
-    interface NavegadorInternet {
+    class NavegadorInternet {
         <<interface>>
-        +exibirPagina(String url)
+        +exibirPagina(url: String)
         +adicionarNovaAba()
         +atualizarPagina()
     }
-
-    iPhone ..|> ReprodutorMusical
-    iPhone ..|> AparelhoTelefonico
-    iPhone ..|> NavegadorInternet
