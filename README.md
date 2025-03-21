@@ -7,6 +7,7 @@
 
 ## Diagrama UML
 
+```mermaid
 classDiagram
     class iPhone {
         +tocar()
